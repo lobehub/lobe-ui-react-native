@@ -1,0 +1,101 @@
+{
+  "name": "@lobehub/ui-rn",
+  "version": "0.0.1",
+  "description": "Lobe UI React Native - an open-source UI component library for building AIGCb apps",
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "dumi dev",
+    "build": "father build",
+    "build:watch": "father dev",
+    "docs:build": "dumi build",
+    "docs:preview": "dumi preview",
+    "prepare": "husky install && dumi setup",
+    "doctor": "father doctor",
+    "lint": "npm run lint:es && npm run lint:css",
+    "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
+    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+    "prepublishOnly": "father doctor && npm run build"
+  },
+  "authors": [
+    "rdmclin2@163.com"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "dependencies": {
+    "@shikijs/core": "^3.1.0",
+    "@shikijs/engine-oniguruma": "^3.1.0",
+    "@shikijs/langs": "^3.2.1",
+    "@shikijs/themes": "^3.2.1",
+    "antd-style": "^3.7.1",
+    "markdown-it-mathjax3": "^4.3.2",
+    "react-native-markdown-display": "^7.0.2",
+    "react-native-mathjax-html-to-svg": "^1.1.0",
+    "react-native-shiki-engine": "^0.1.8",
+    "react-native-svg": "^15.11.2",
+    "react-native-svg-web": "^1.0.9",
+    "shiki": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@react-native/babel-preset": "^0.78.2",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@umijs/bundler-webpack": "^4.4.6",
+    "@umijs/core": "^4.4.6",
+    "@umijs/lint": "^4.0.0",
+    "babel-loader": "^10.0.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "dumi": "^2.4.13",
+    "dumi-theme-mobile": "^2.0.0",
+    "eslint": "^8.23.0",
+    "father": "^4.1.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^3.0.0",
+    "prettier-plugin-packagejson": "^2.2.18",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-native": "^0.78.2",
+    "react-native-web": "^0.20.0",
+    "stylelint": "^14.9.1"
+  }
+}

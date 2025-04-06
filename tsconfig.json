@@ -1,0 +1,34 @@
+{
+  // TypeScript 编译器选项
+  "compilerOptions": {
+    // 启用所有严格类型检查选项
+    "strict": true,
+    // 生成相应的 '.d.ts' 文件
+    "declaration": true,
+    // 跳过对声明文件的类型检查
+    "skipLibCheck": true,
+    // 启用 CommonJS 和 ES 模块之间的互操作性
+    "esModuleInterop": true,
+    // 指定模块解析策略
+    "moduleResolution": "bundler",
+    // 指定 ECMAScript 目标版本
+    "target": "ESNext",
+    // 指定 JSX 代码生成方式
+    "jsx": "react-native",
+    // 指定要包含的库文件
+    "lib": ["DOM", "ESNext"],
+    // 指定基本目录，用于解析非相对模块名
+    "baseUrl": "./",
+    // 指定路径映射，用于模块导入
+    "paths": {
+      // dumi 临时文件路径映射
+      "@@/*": [".dumi/tmp/*"],
+      // 将 @lobehub/ui-rn 映射到 src 目录
+      "@lobehub/ui-rn": ["src"],
+      // 将 @lobehub/ui-rn/* 映射到 src/* 或根目录 *
+      "@lobehub/ui-rn/*": ["src/*", "*"]
+    }
+  },
+  // 指定要包含在编译中的文件
+  "include": [".dumirc.ts", "src/**/*"]
+}
