@@ -27,7 +27,8 @@
       "@lobehub/ui-rn": ["src"],
       // 将 @lobehub/ui-rn/* 映射到 src/* 或根目录 *
       "@lobehub/ui-rn/*": ["src/*", "*"]
-    }
+    },
+    "module": "esnext"
   },
   // 指定要包含在编译中的文件
   "include": [".dumirc.ts", "src/**/*"]
